@@ -10,7 +10,7 @@ def test_model_availability():
     
     # Arrange
     MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
-    CHOSEN_MODEL = os.getenv("CHOSEN_MODEL")
+    CHOSEN_MODEL = os.getenv("MODEL_ALIAS")
     
     mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI)
     mlflow.set_experiment("Flower Classification")
