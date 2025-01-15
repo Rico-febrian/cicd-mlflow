@@ -16,7 +16,7 @@ def test_model_availability():
     mlflow.set_experiment("Flower Classification")
     
     # Act
-    chosen_model = mlflow.pyfunc.load_model(f"models:Untouch Logistic Regression/{CHOSEN_MODEL}")
+    chosen_model = mlflow.pyfunc.load_model(f"models:/Untouch Logistic Regression@{CHOSEN_MODEL}")
     
     # Assert
     assert type(chosen_model) == mlflow.pyfunc.PyFuncModel
