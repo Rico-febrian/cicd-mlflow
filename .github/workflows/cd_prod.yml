@@ -64,10 +64,10 @@ jobs:
             echo "MLFLOW_TRACKING_PASSWORD=${{ secrets.MLFLOW_TRACKING_PASSWORD }}" >> .env
             echo "MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI }}" >> .env
             echo "MODEL_ALIAS=${{ secrets.MODEL_ALIAS_PROD }}" >> .env
-        - name: Deploy to EC2 staging server
+        - name: Deploy to EC2 production server
           run: |
             ssh deploy_ec2 "rm -f docker-compose.yaml"
             scp docker-compose.yaml .env deploy_ec2:.
             ssh deploy_ec2 "sudo docker compose down && sudo docker system prune -af"
-            ssh deploy_ec2 "sudo docker compose pull && sudo docker compose up -d"
+            ssh deploy_ec2 "sudo docker compose pull && sudo docker compose up api_prod_1 api_prod_2 -d"
 
