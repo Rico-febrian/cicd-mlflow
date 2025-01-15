@@ -13,33 +13,17 @@ services:
     env_file:
       - .env
 
-  api_stg_1:
+  api_stg:
     image: ricofebrian405/mlflow_api
-    container_name: mlflow_api_stg_1
+    container_name: mlflow_api_stg
     ports:
       - 8080:8080
     env_file:
       - .env
 
-  api_stg_2:
+  api_prod:
     image: ricofebrian405/mlflow_api
-    container_name: mlflow_api_stg_2
-    ports:
-      - 8080:8080
-    env_file:
-      - .env
-
-  api_prod_1:
-    image: ricofebrian405/mlflow_api
-    container_name: mlflow_api_prod_1
-    ports:
-      - 8080:8080
-    env_file:
-      - .env
-
-  api_prod_2:
-    image: ricofebrian405/mlflow_api
-    container_name: mlflow_api_prod_2
+    container_name: mlflow_api_prod
     ports:
       - 8080:8080
     env_file:
