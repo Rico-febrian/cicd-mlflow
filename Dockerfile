@@ -8,7 +8,7 @@ COPY ./src/api.py ./src/api.py
 
 RUN \
 apt-get update && \
-apt-get upgrade && -y \
+apt-get upgrade -y &&\
 apt-get autoremove -y && \
 apt-get clean -y && \
 pip install --upgrade pip && \
